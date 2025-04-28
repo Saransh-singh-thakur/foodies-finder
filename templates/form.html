@@ -1,0 +1,82 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body><br><br>   
+<div align="center">
+    <form method="post" action="">
+
+        <label>enter your name 
+        <input type="text" size="10" placeholder="enter first name">
+        </label><br><br>
+        <label>enter your fav subjet:<br>
+        <input type="checkbox" name="option1" value="python">python <br>
+        <input type="checkbox" name="option2" value="c++">c++<br>
+        <input type="checkbox" name="option3" value="C">C <br><br></label>
+        <label for id="1" >enter your cllg year<br>
+        <input type="radio" name="group1" id="1" value="1st year">1st year</label><br>
+        <input type="radio" name="group1" value="2nd year">2nd year<br>
+        <input type="radio" name="group1" value="3rd yera">3rd year
+        <br><br>
+        <label for id="10"> select any number :</label>
+        <select name="" id="10">
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        </select>
+        <br><br>
+        <input type="submit" value="send">
+        <input type="reset" value="reset"><br><br>
+        
+   
+    </form>
+</div>
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body><br><br>   
+<div align="center">
+    <form method="post" action="{% url 'form' %}">
+        {% csrf_token %}
+
+        <label>enter your name 
+            <input type="text" size="10" placeholder="enter first name" name="username" required>
+        </label><br><br>
+        <label>enter your fav subjet:<br>
+        <input type="checkbox" name="option1" value="python">python <br>
+        <input type="checkbox" name="option2" value="c++">c++<br>
+        <input type="checkbox" name="option3" value="C">C <br><br></label>
+        <label for id="1" name='year'>enter your cllg year<br>
+        <input type="radio" name="group1" id="1" value="1st year">1st year</label><br>
+        <input type="radio" name="group1" value="2nd year">2nd year<br>
+        <input type="radio" name="group1" value="3rd yera">3rd year
+        <br><br>
+        <label for id="10"> select any number :</label>
+        <select name="select" id="10">
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        </select>
+        <br><br>
+        <input type="submit" value="send">
+        <input type="reset" value="reset"><br><br>
+
+        {% if message %}
+            <p style="color: green;">{{ message }}</p>
+        {% endif %}
+   
+    </form>
+</div>
+</body>
+</html>
+

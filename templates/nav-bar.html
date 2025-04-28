@@ -1,0 +1,29 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>foodie finder 0.2</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <a href="#"><div class="nav-logo"></div></a>
+            <a href="#"><div id="location"><p id="location">Fetching location...</p></div></a>
+
+            <div class="searchbar">
+                <div class="selector">
+                    <select name="All" class="option">
+                        <option value="club">club</option>
+                        <option value="restaurant">restaurant</option>
+                        <option value="event">event</option>
+                        <option value="near me">near me</option>
+                        <option value="dine in">dine in</option>
+                    </select>
+                </div>
+                <input type="text" name="search" placeholder="dine,dance,discover" class="input" />
+                <div class="searchLogo">search</div>
+            </div>
+        </div>
